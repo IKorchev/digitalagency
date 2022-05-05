@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Ball from "../public/LP_Ball.svg"
 import Link from "next/link"
-import { BsFillBarChartFill, BsClockHistory, BsStars } from "react-icons/bs"
+import { BsFillBarChartFill, BsClockHistory, BsStars, BsCheck } from "react-icons/bs"
 import { BiSync } from "react-icons/bi"
 import Form from "../components/Form/Form"
 import Navbar from "../components/Navbar"
@@ -128,15 +128,17 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <section className='container px-24 mx-auto'>
-        <div className='flex px-12 '>
-          <div className='w-full'>
+      <section className='container px-24 py-24 mx-auto'>
+        <div className='flex '>
+          <div className='w-full flex justify-center'>
             <img src='/ImageAndCard.svg' alt='' />
           </div>
           <div className='w-full flex flex-col justify-center'>
             <span className='text-accent-orange text-2xl'>SCHEDULE</span>
-            <h1 className='text-6xl font-black mt-4'>Great customer relationship starts here</h1>
-            <p className='text-lg mt-8'>
+            <h1 className='text-6xl font-black text-accent-purple  mt-4'>
+              Great customer relationship starts here
+            </h1>
+            <p className='text-xl mt-8'>
               80 days around the world, we&apos;ll find a pot of gold just sitting where the rainbow&apos;s
               ending. Time — we&apos;ll fight against the time, and we&apos;ll fly on the white wings of the
               wind.
@@ -148,16 +150,18 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className='flex flex-row-reverse px-12 mt-12'>
-          <div className='w-full'>
+        <div className='flex flex-row-reverse mt-12'>
+          <div className='w-full flex justify-center'>
             <img src='/ImageAndCard_2.svg' alt='' />
           </div>
           <div className='w-full flex flex-col justify-center'>
             <span className='text-accent-green text-2xl'>MONITOR</span>
-            <h1 className='text-6xl font-black mt-4'>Introducing best mobile carousels</h1>
-            <p className='text-lg mt-8'>
+            <h1 className='text-6xl text-accent-purple font-black mt-4'>Introducing best mobile carousels</h1>
+            <p className='text-xl mt-8'>
               Before the ship is really back. Round, round, all around the world. Round, all around the world.
-              Round, all around the world. Round, all around the world.
+              Round, all around the world.
+              <br />
+              Round, all around the world.
             </p>
             <Link href='/'>
               <a className='text-accent-purple text-lg  mt-8 font-semibold hover:underline focus:underline'>
@@ -168,11 +172,7 @@ export default function Home() {
         </div>
       </section>
       <section className='bg-background-secondary flex justify-center py-24 '>
-        <div className='relative flex flex-col bg-[#2E2E3E] shadow-xl items-center  p-12 w-2/5 rounded-xl text-center'>
-          <div className='bg-[#262634] rounded-lg px-12 py-5 flex items-center space-x-12  absolute -bottom-12 -right-48'>
-            <h1 className='text-xl'>Ready to get started?</h1>
-            <button className='icon shadow-lg shadow-black/50 py-2 px-4 text-gray-200 text-xl rounded-lg'>Get started</button>
-          </div>
+        <div className='relative flex flex-col bg-[#2E2E3E]  shadow-black/20 shadow-xl items-center  p-12 w-2/5 rounded-xl text-center'>
           <h1 className='text-3xl'>Pricing</h1>
           <div className='flex space-x-24 mt-12'>
             <div className='flex flex-col'>
@@ -206,7 +206,41 @@ export default function Home() {
               <span>20+</span>
             </div>
           </div>
+          <div className='bg-[#262634] rounded-lg px-12 py-5 flex items-center shadow-xl shadow-black/30 space-x-12  absolute -bottom-12 -right-48'>
+            <h1 className='text-xl'>Ready to get started?</h1>
+            <button className='icon shadow-lg shadow-black/50 py-2 px-4 text-gray-200 text-xl rounded-lg'>
+              Get started
+            </button>
+          </div>
         </div>
+      </section>
+      <section className='container mx-auto py-32 bg-background-primary flex justify-evenly'>
+        <div className=''>
+          <h1 className='text-6xl font-black text-accent-purple'>Future of support with new shape</h1>
+          <p className='text-lg mt-8'>
+            Discuss your goals, determine success
+            <br />
+            metrics, identify problems
+          </p>
+          <div>
+            <div className='flex mt-8 items-center space-x-4'>
+              <span className='w-7 h-7 grid place-items-center  rounded-full icon shadow-xl shadow-black/40'>
+                <BsCheck className='text-2xl text-white' />
+              </span>
+              <span className='text-lg'>UX design content strategy</span>
+            </div>
+            <div className='flex mt-4 items-center space-x-4'>
+              <span className='w-7 h-7 grid place-items-center  rounded-full icon shadow-xl shadow-black/40'>
+                <BsCheck className='text-2xl text-white' />
+              </span>
+              <span className='text-lg'>Development bring</span>
+            </div>
+          </div>
+          <button className='icon px-7 py-4 shadow-xl shadow-black/30 text-white rounded-xl text-xl mt-12'>
+            Get started
+          </button>
+        </div>
+        <div className='h-96 w-full bg-white '></div>
       </section>
     </div>
   )

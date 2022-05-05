@@ -1,11 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
 import React from "react"
-import Logo from "./Logo"
 
 const Navbar = () => {
   return (
     <nav role='navigation' className='container flex justify-between mx-auto  py-4'>
-      <Logo />
+      <Link href='/'>
+        <a className='flex items-center'>
+          <img src='/logo.svg' alt='Brand Logo' />
+          <span className='-ml-12 text-purple-cta text-5xl focus:ring'>tnd.</span>
+        </a>
+      </Link>
       <div className='flex gap-5'>
         <Link href='/'>
           <a className='nav-link'>About Us</a>
