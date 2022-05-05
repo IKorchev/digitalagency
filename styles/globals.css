@@ -1,16 +1,40 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-link {
+  @apply p-3 text-text-primary font-semibold hover:text-text-secondary focus:text-text-secondary hover:underline focus:underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-text-primary;
+}
+p,
+span {
+  @apply text-text-secondary;
+}
+button {
+  @apply relative;
+}
+
+button {
+}
+
+.icon {
+  @apply bg-gradient-to-b from-[#6D6D8A] to-[#37374A];
+}
+input[type="email"] {
 }
