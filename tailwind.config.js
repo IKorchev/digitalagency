@@ -15,7 +15,6 @@ module.exports = {
         "accent-orange": "#FF8400",
         "accent-purple": "#7777D0",
         "accent-icon": "#333363",
-        
       },
     },
   },

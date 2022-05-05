@@ -1,7 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import Ball from "../public/LP_Ball.svg"
 import Link from "next/link"
-import { BsFillBarChartFill, BsClockHistory, BsStars, BsCheck } from "react-icons/bs"
+import {
+  BsFillBarChartFill,
+  BsClockHistory,
+  BsStars,
+  BsFillStarFill,
+  BsCheck,
+  BsStack,
+  BsChevronLeft,
+  BsChevronRight,
+  BsLightbulbFill,
+} from "react-icons/bs"
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa"
+import { IoMdSettings } from "react-icons/io"
+import { FaChartPie } from "react-icons/fa"
 import { BiSync } from "react-icons/bi"
 import Form from "../components/Form/Form"
 import Navbar from "../components/Navbar"
@@ -9,6 +22,54 @@ import CompaniesList from "../components/CompaniesList"
 import { useState } from "react"
 
 const images = ["Slack", "Amazon", "Woo", "Undies", "Sitepoint"]
+
+const data = [
+  {
+    icon: <BsStack className='text-[3rem] text-text-primary' />,
+    title: "Web Design",
+    description: "Stack is a platform for developers to build and share their skills.",
+    link: "/stack",
+  },
+  {
+    icon: <BsLightbulbFill className='text-[3rem] text-text-primary' />,
+    title: "Ad-Creatives",
+    description: "Alphabet Village and the subline of her own road to success.",
+    link: "/stack",
+  },
+  {
+    icon: <IoMdSettings className='text-[3rem] text-text-primary' />,
+    title: "Automation",
+    description: "Little Blind Text should turn around and return to success.",
+    link: "/stack",
+  },
+  {
+    icon: <FaChartPie className='text-[3rem] text-text-primary' />,
+    title: "Infographics",
+    description: "Nothing the copy said could convince her to return to success.",
+    link: "/stack",
+  },
+]
+
+const cardsData = [
+  {
+    src: "/Person_3.png",
+    name: "Robin Avala Doe",
+    description:
+      "From the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast.",
+  },
+  {
+    src: "/Person_2.png",
+    name: "John De marli",
+    description:
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.",
+  },
+  {
+    src: "/Person_1.png",
+    name: "Rowhan Smith",
+    description:
+      "When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline ",
+  },
+]
 
 export default function Home() {
   const [value, setValue] = useState(4)
@@ -215,7 +276,7 @@ export default function Home() {
         </div>
       </section>
       <section className='container mx-auto py-32 bg-background-primary flex justify-evenly'>
-        <div className=''>
+        <div className='flex flex-col justify-center'>
           <h1 className='text-6xl font-black text-accent-purple'>Future of support with new shape</h1>
           <p className='text-lg mt-8'>
             Discuss your goals, determine success
@@ -236,12 +297,211 @@ export default function Home() {
               <span className='text-lg'>Development bring</span>
             </div>
           </div>
-          <button className='icon px-7 py-4 shadow-xl shadow-black/30 text-white rounded-xl text-xl mt-12'>
+          <button className='icon inline-flex w-max px-7 py-4 shadow-xl shadow-black/30 text-white rounded-xl text-xl mt-12'>
             Get started
           </button>
         </div>
-        <div className='h-96 w-full bg-white '></div>
+        <div className='w-full mx-auto px-48'>
+          <div className='grid grid-cols-2  gap-12 place-items-center'>
+            {data.map(({ title, description, icon, link }) => {
+              return (
+                <div
+                  key={title}
+                  className='w-72 h-72 space-y-4  bg-background-secondary rounded-xl py-8 px-12'>
+                  {icon}
+                  <h3 className='text-xl text-accent-purple font-semibold'>{title}</h3>
+                  <p className='text-base'>{description}</p>
+                  <Link href={link}>
+                    <a className='text-accent-purple inline-flex'>LEARN MORE</a>
+                  </Link>
+                </div>
+              )
+            })}
+          </div>
+        </div>
       </section>
+      <section className='py-36'>
+        <div>
+          <h1 className='text-center text-5xl font-bold text-accent-purple'>What our clients say</h1>
+          <p className='text-center mt-5'>Things that make it the best place to start trading</p>
+        </div>
+        <div className='mt-24 grid grid-cols-3 gap-5 px-12'>
+          {cardsData.map((item) => (
+            <div
+              key={item.src}
+              className='text-center space-y-3 px-12 relative mt-12 shadow-lg  shadow-black/30 
+              justify-center flex-grow py-6 rounded-lg bg-background-secondary'>
+              <div className='h-32 w-32 absolute -top-12 left-1/2 -translate-x-1/2'>
+                <img src={item.src} className='w-full' alt='' />
+              </div>
+              <div className=' absolute top-10 left-24'>
+                <img src='/Quote.svg' className='w-full' alt='' />
+              </div>
+              <div className='flex pt-5 justify-center'>
+                {[1, 2, 3, 4, 5].map((item, index) => {
+                  return <BsFillStarFill key={index} className='text-text-primary text-xl' />
+                })}
+              </div>
+              <h4 className='text-accent-purple text-lg font-semibold'>{item.name}</h4>
+              <p className='text-center text-lg mx-auto leading-relaxed pt-4 '>{item.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className='mt-12 gap-5 flex justify-center'>
+          <button className='disabled  h-12 w-12 rounded-full grid place-items-center'>
+            <BsChevronLeft className='text-xl' />
+          </button>
+          <button className='icon shadow-lg shadow-black/40 h-12 w-12 rounded-full grid place-items-center'>
+            <BsChevronRight className='text-xl text-white' />
+          </button>
+        </div>
+      </section>
+      <hr className='w-2/3 mx-auto border-background-secondary' />
+      <section className='p-32 mx-auto container flex justify-center '>
+        <div className='grid h-48 z-10 w-full relative rounded-xl shadow-lg shadow-black/20 overflow-hidden bg-background-secondary'>
+          <div className='h-full flex items-center justify-evenly '>
+            <div className='flex flex-col w-2/5'>
+              <h5 className='text-3xl font-bold text-accent-purple'>Subscribe to our newsletter</h5>
+              <p className='mt-5 text-lg pr-12'>
+                The copy warned the Little Blind Text, that where it came from it would have been rewritten.
+              </p>
+            </div>
+            <div className='z-20 h-max flex shadow-xl shadow-black/30 '>
+              <input
+                type='text'
+                className='text-xl px-2 text-white py-3 bg-background-secondary rounded-l-xl'
+              />
+              <button className='rounded-r-xl icon text-lg p-3 text-white flex items-center '>
+                Discover
+                <span className='icon shadow-xl p-2 shadow-black/40 rounded-full text-accent-green ml-3'>
+                  <BsChevronRight className='text-xl' />
+                </span>
+              </button>
+            </div>
+          </div>
+          <div className='bg-[#27283A] -skew-x-12 w-1/2 h-full  absolute top-0 -right-12'></div>
+        </div>
+      </section>
+      <footer className='bg-background-secondary '>
+        <div className='container px-12 py-12 mx-auto'>
+          <div className='grid grid-cols-3 gap-12 '>
+            <div className='col-span-1 w-2/3'>
+              <h5 className='flex items-center text-2xl'>
+                <img src='/logo.svg' alt='' />
+                <span className='-ml-16 text-purple-cta'>The Next Design</span>
+              </h5>
+              <p className='mt-8 text-lg'>
+                The copy warned the Little Blind Text, that where it came from it would have been rewritten a
+                thousand times.
+              </p>
+              <div className='flex gap-5 mt-12'>
+                <span
+                  className='bg-black text-white grid 
+              place-items-center text-lg h-8 w-8 rounded-lg'>
+                  <FaFacebookF />
+                </span>
+                <span
+                  className='bg-black text-white grid 
+              place-items-center text-lg h-8 w-8 rounded-lg'>
+                  <FaTwitter />
+                </span>
+                <span
+                  className='bg-black text-white grid 
+              place-items-center text-lg h-8 w-8 rounded-lg'>
+                  <FaLinkedinIn />
+                </span>
+              </div>
+            </div>
+            <div className='col-span-2 flex justify-between pl-24'>
+              <div className=''>
+                <h5 className='flex items-center text-2xl text-purple-cta'>Company</h5>
+                <ul className='text-text-primary text-lg space-y-3 mt-8'>
+                  <li>
+                    <Link href='/'>
+                      <a>About</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/'>
+                      <a>Terms of use</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/'>
+                      <a>Privacy Policy</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/'>
+                      <a>How it works</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/'>
+                      <a>Contact us</a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h5 className='flex items-center text-2xl text-purple-cta'>Get Help</h5>
+                <ul className='text-text-primary text-lg space-y-3 mt-8'>
+                  <li>
+                    <Link href='/'>
+                      <a>Support Center</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/'>
+                      <a>24hr Service</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/'>
+                      <a>Quick Chat</a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h5 className='flex items-center text-2xl text-purple-cta'>Learn More</h5>
+                <ul className='text-text-primary text-lg space-y-3 mt-8'>
+                  <li>
+                    <Link href='/'>
+                      <a>FAQ</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/'>
+                      <a>Blog</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/'>
+                      <a>Partners</a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr className='mt-12 border-gray-400' />
+          <div className='flex justify-between mt-5'>
+            <p>
+              Design by{" "}
+              <a href='https://arshkir.com/' rel='noreferrer ' target='_blank'>
+                arshkir.com
+              </a>
+            </p>
+            <p>
+              Developed by{" "}
+              <a href='https://ikorchev.com/' rel='noreferrer ' target='_blank'>
+                ikorchev.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

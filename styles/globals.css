@@ -34,7 +34,6 @@ button {
   @apply bg-gradient-to-b from-[#6D6D8A] to-[#37374A];
 }
 
-
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -64,4 +63,8 @@ button {
   border-radius: 50%;
   background: #999aab;
   cursor: pointer;
+}
+
+.disabled {
+  @apply bg-[#292938] text-[#494a66];
 }
