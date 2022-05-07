@@ -1,0 +1,6 @@
+export { default as FifthPageSection } from "./FifthPageSection"
+export { default as LandingPageSection } from "./LandingPage"
+export { default as ThirdPageSection } from "./ThirdPageSection"
+export { default as SixthPageSection } from "./SixthPageSection"
+export { default as SecondPageSection } from "./SecondPageSection"
+export { default as FourthPagePricingSection } from "./FourthPagePricingSection"
