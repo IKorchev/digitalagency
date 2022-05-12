@@ -2,7 +2,6 @@
 
 import Navbar from "../components/Layout/Navbar"
 import FooterPageSection from "../components/Layout/Footer"
-import CompaniesList from "../components/CompaniesList"
 import {
   ThirdPageSection,
   FourthPagePricingSection,
@@ -12,7 +11,6 @@ import {
   LandingPageSection,
 } from "../components/Pages"
 
-const images = ["Slack", "Amazon", "Woo", "Undies", "Sitepoint"]
 
 export default function Home() {
   return (
@@ -25,7 +23,7 @@ export default function Home() {
       className='bg-background-primary'>
       <Navbar />
       <LandingPageSection />
-      <CompaniesList images={images} />
+
       <SecondPageSection />
       <ThirdPageSection />
       <FourthPagePricingSection />

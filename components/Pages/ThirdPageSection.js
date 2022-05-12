@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { container, item } from "../../utils/motionConfigs"
+import { item } from "../../utils/motionConfigs"
+import Staggered from "../Staggered"
 
 const sectionData = [
   {
@@ -22,17 +23,12 @@ const sectionData = [
   },
 ]
 
-const Section = ({ imgSrc, preTitle, title, text, link, linkText }) => {
+const SectionCard = ({ imgSrc, preTitle, title, text, link, linkText }) => {
   return (
-    <motion.div
-      variants={container}
-      // viewport={{ once: true }}
-      initial='hidden'
-      whileInView='show'
-      className='flex even:flex-row-reverse even: my-24'>
-      <motion.div transition={{ delay: 0.2 }} variants={item} className='w-full flex justify-center'>
+    <Staggered.Parent margin='-200px' className='flex even:flex-row-reverse even: my-24'>
+      <Staggered.ChildDiv className='w-full flex justify-center'>
         <img src={imgSrc} alt='' />
-      </motion.div>
+      </Staggered.ChildDiv>
       <div className='w-full flex flex-col justify-center'>
         <motion.span variants={item} className='text-accent-orange text-2xl'>
           {preTitle.toUpperCase()}
@@ -51,15 +47,15 @@ const Section = ({ imgSrc, preTitle, title, text, link, linkText }) => {
           </motion.a>
         </Link>
       </div>
-    </motion.div>
+    </Staggered.Parent>
   )
 }
 
 const ThirdPageSection = () => {
   return (
-    <section className='container px-24 py-24 mx-auto'>
+    <section className='container px-24 py-12 mx-auto'>
       {sectionData.map((data, index) => {
-        return <Section key={index} {...data} />
+        return <SectionCard key={index} {...data} />
       })}
     </section>
   )
